@@ -8,13 +8,8 @@
  * Module dependencies.
  */
 
-var relative = require('path').relative
-
-/**
- * Module exports.
- */
-
-module.exports = depd
+import { relative } from 'https://deno.land/std/node/path.ts';
+import { process } from 'https://deno.land/std/node/process.ts';
 
 /**
  * Get the path to base files on.
@@ -100,7 +95,7 @@ function createStackString (stack) {
  * Create deprecate for namespace in caller.
  */
 
-function depd (namespace) {
+export default function depd (namespace) {
   if (!namespace) {
     throw new TypeError('argument namespace is required')
   }
